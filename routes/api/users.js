@@ -16,7 +16,7 @@ const User = require('../../models/User');
 router.post(
   '/',
   [
-    check('name', 'Name is required').notEmpty(),
+    check('name', 'Name is required').not().isEmpty(),
     check('email', 'Please include a valid email').isEmail(),
     check(
       'password',
@@ -28,6 +28,7 @@ router.post(
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
+      // console.log(errors);
       return res.status(400).json({ errors: errors.array() });
     }
 
@@ -45,14 +46,11 @@ router.post(
 
       // get user gravatar
 
-      const avatar = normalize(
-        gravatar.url(email, {
-          s: '200',
-          r: 'pg',
-          d: 'mm',
-        }),
-        { forceHttps: true }
-      );
+      const avatar = gravatar.url(email, {
+        s: '200',
+        r: 'pg',
+        d: 'mm',
+      });
 
       user = new User({
         name,
