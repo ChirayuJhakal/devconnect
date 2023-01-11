@@ -1,0 +1,6 @@
+{
+  "mongoURI": "mongodb+srv://chirayu_J:chirayu123@dev-connector.647x8ee.mongodb.net/?retryWrites=true&w=majority",
+  "jwtSecret": "mysecrettoken",
+  "githubClientId": "a889a2b851d25f5af640",
+  "githubSecret": "4d21ab80df7099af4722d1c923c75ca6d766e69b"
+}
