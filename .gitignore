@@ -1,5 +1,5 @@
-node_modules/
-config/default.json
-devconnector_html_theme.zip/
-devconnector_html_theme/
+/node_modules
+/config/default.json
+/devconnector_html_theme.zip/
+/devconnector_html_theme/
 /client/node_modules/
